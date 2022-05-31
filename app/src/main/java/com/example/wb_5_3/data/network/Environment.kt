@@ -11,4 +11,5 @@ object Environment {
     const val API_KEY = "972ca4a4-cd42-40f3-9787-8e509675ae4f"
 
     const val FAVOURITE_CAT_QUERY = "favourites"
+
 }

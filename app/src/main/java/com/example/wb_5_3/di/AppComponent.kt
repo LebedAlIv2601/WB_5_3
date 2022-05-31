@@ -2,9 +2,12 @@ package com.example.wb_5_3.di
 
 import android.util.Log
 import com.example.wb_5_3.data.repository.GetCatRepositoryImpl
+import com.example.wb_5_3.data.repository.GetFavoriteCatsRepositoryImpl
 import com.example.wb_5_3.data.repository.PostFavoriteCatRepositoryImpl
 import com.example.wb_5_3.domain.repository.GetCatRepository
+import com.example.wb_5_3.domain.repository.GetFavoriteCatsRepository
 import com.example.wb_5_3.domain.repository.PostFavoriteCatRepository
+import com.example.wb_5_3.presentation.favorite.FavoriteFragment
 import com.example.wb_5_3.presentation.search.SearchFragment
 import dagger.Binds
 import dagger.Component
@@ -19,6 +22,7 @@ import io.ktor.client.features.logging.*
 @Component(modules = [DataModule::class, DomainBinds::class])
 interface AppComponent {
     fun inject(searchFragment: SearchFragment)
+    fun inject(favoriteFragment: FavoriteFragment)
 }
 
 @Module
@@ -58,4 +62,10 @@ interface DomainBinds{
     fun postFavoriteCatRepositoryImplToInterface(
         repositoryImpl: PostFavoriteCatRepositoryImpl
     ): PostFavoriteCatRepository
+
+    @Binds
+    fun getFavoriteCatsRepositoryImplToInterface(
+        repositoryImpl: GetFavoriteCatsRepositoryImpl
+    ): GetFavoriteCatsRepository
+
 }
