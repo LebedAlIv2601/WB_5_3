@@ -36,7 +36,7 @@ class CatApiHelper @Inject constructor(private val client: HttpClient){
             header(API_KEY_LABEL, API_KEY)
 
             contentType(ContentType.Application.Json)
-            body = CatFavoriteRequest(cat.id, "111")
+            body = CatFavoriteRequest(cat.id, "1111")
         }
 
         return answer.message == "SUCCESS"
@@ -47,7 +47,7 @@ class CatApiHelper @Inject constructor(private val client: HttpClient){
             header(API_KEY_LABEL, API_KEY)
 
             url{
-                parameters.append("sub_id", "111")
+                parameters.append("sub_id", "1111")
             }
 
         }

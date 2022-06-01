@@ -79,6 +79,10 @@ class SearchFragment : Fragment() {
             loadingPermission = it
         })
 
+        vm.enableToTouchLike.observe(viewLifecycleOwner, Observer{
+            enableToTouchLike = it
+        })
+
         if (loadingPermission) {
             getCatWithObserver()
             vm.setLoadingPermissionFalse()
@@ -131,5 +135,6 @@ class SearchFragment : Fragment() {
         binding = null
         super.onDestroyView()
     }
+
 
 }
